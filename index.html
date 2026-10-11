@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>業務パソコンの仕様</title>
+<meta name="description" content="司法書士システム「権」と測量CAD「トレンドワン」を使うノートパソコンの仕様のまとめです。必要な性能、選べない機種、参考の機種とリンクを載せています。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://a-tozak.github.io/gyomu-pc-spec/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="業務パソコンの仕様">
+<meta property="og:description" content="司法書士システム「権」と測量CAD「トレンドワン」を使うノートパソコンの仕様のまとめです。">
+<meta property="og:url" content="https://a-tozak.github.io/gyomu-pc-spec/">
+<meta property="og:image" content="https://a-tozak.github.io/gyomu-pc-spec/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --ink: #15181c; --black: #0e0f11; --paper: #ffffff; --wash: #f6f6f4;
+    --line: #e2e2de; --sub: #6a6f77; --accent: #2b5fd9; --warn: #b3261e; --warn-wash: #fdf3f2;
+    --font-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8e9eb; --black: #f4f5f6; --paper: #15171a; --wash: #1e2125;
+      --line: #30343a; --sub: #a0a5ad; --accent: #7aa2ff; --warn: #ff8a80; --warn-wash: #2a1c1b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-ja); font-size: 16px; line-height: 1.75; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3, .lead { word-break: auto-phrase; text-wrap: pretty; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .nowrap { white-space: nowrap; }
+
+  header.top { border-bottom: 3px solid var(--black); padding: 40px 0 24px; }
+  .kicker { margin: 0 0 6px; font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .08em; }
+  h1 { margin: 0 0 12px; font-size: clamp(26px, 5vw, 36px); line-height: 1.3; color: var(--black); }
+  .lead { margin: 0; font-size: 16px; }
+  .updated { margin: 12px 0 0; font-size: 13px; color: var(--sub); }
+
+  section { padding: 32px 0 8px; }
+  h2 { margin: 0 0 16px; font-size: 22px; line-height: 1.4; color: var(--black); display: flex; gap: 10px; align-items: baseline; }
+  h2 .num { flex: none; font-size: 14px; color: var(--paper); background: var(--black); border-radius: 3px; padding: 0 8px; }
+  h3 { margin: 0 0 6px; font-size: 17px; color: var(--black); }
+  p { margin: 0 0 12px; }
+
+  /* 結論の帯 */
+  .summary { margin-top: 24px; background: var(--wash); border-radius: 6px; padding: 20px; }
+  .summary h2 { margin-bottom: 10px; font-size: 18px; }
+  .summary ul { margin: 0; padding-left: 1.2em; }
+  .summary li { margin: 4px 0; }
+  .summary strong { color: var(--black); }
+
+  /* 表 */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid var(--line); }
+  thead th { background: var(--wash); border-bottom: 2px solid var(--ink); font-size: 14px; white-space: nowrap; }
+  td.item { font-weight: 700; white-space: nowrap; }
+  td.must { font-weight: 700; color: var(--black); }
+  td.why { color: var(--sub); font-size: 14px; }
+  @media (max-width: 640px) {
+    table.stack thead { display: none; }
+    table.stack tr { display: block; border-bottom: 1px solid var(--line); padding: 10px 0; }
+    table.stack td { display: block; border: 0; padding: 2px 0; }
+    table.stack td.item { font-size: 13px; color: var(--sub); }
+  }
+
+  /* 選べないもの */
+  .ng { border: 2px solid var(--warn); background: var(--warn-wash); border-radius: 6px; padding: 16px 20px; margin-top: 20px; }
+  .ng h3 { color: var(--warn); }
+  .ng ul { margin: 0 0 8px; padding-left: 1.2em; }
+  .ng li { margin: 4px 0; }
+  .ng .note { margin: 0; font-size: 14px; color: var(--sub); }
+
+
+  /* 機種カード */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; }
+  .card.first { border: 2px solid var(--accent); }
+  .badge { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--paper); background: var(--accent); border-radius: 3px; padding: 0 8px; margin-bottom: 8px; }
+  .card .price { font-size: 20px; font-weight: 700; color: var(--black); margin: 4px 0 2px; }
+  .card .price-note { font-size: 13px; color: var(--sub); margin: 0 0 10px; }
+  .card dl { margin: 0 0 10px; font-size: 14px; }
+  .card dt { float: left; clear: left; width: 5.5em; color: var(--sub); }
+  .card dd { margin: 0 0 2px 5.5em; }
+  .card .care { font-size: 14px; margin: 0 0 12px; }
+  .card .links { margin-top: auto; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+
+  ul.plain { margin: 0; padding-left: 1.2em; }
+  ul.plain li { margin: 6px 0; }
+  .refs li { margin: 8px 0; }
+  .refs .src { font-size: 13px; color: var(--sub); }
+
+  footer { margin-top: 40px; border-top: 2px solid var(--black); padding: 20px 0 48px; font-size: 14px; color: var(--sub); }
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="kicker">パソコン購入のご相談</p>
+  <h1>業務ソフトが動くノートパソコンの仕様</h1>
+  <p class="lead">司法書士事務所と土地家屋調査士事務所で使うノートパソコンを購入します。下の業務ソフトが動くことが条件です。必要な性能と、参考にした機種をまとめました。</p>
+  <p class="updated">2026年10月11日更新　外﨑 顯博</p>
+</header>
+
+<div class="summary">
+  <h2>要点</h2>
+  <ul>
+    <li><strong>CPUはインテル製のCore Ultra 7</strong>です。AMD製とARM版のWindowsは選べません</li>
+    <li><strong>メモリ32GB、SSD 1TB、Windows 11 Pro、有線LAN</strong>が条件です</li>
+    <li><strong>Office Home &amp; Business 2024（買い切り版）</strong>が必要です</li>
+    <li>予算はOfficeを含めて<strong>22万円前後</strong>です。丈夫さや持ち歩きで上の機種が合うなら33万円まで検討します</li>
+  </ul>
+</div>
+
+<section>
+  <h2><span class="num">1</span>使うソフト</h2>
+  <div class="table-wrap">
+  <table class="stack">
+    <thead><tr><th>ソフト</th><th>メーカー</th><th>使い道</th></tr></thead>
+    <tbody>
+      <tr><td class="must">司法書士システム「権」（V20.06）</td><td>株式会社リーガル</td><td>登記の書類作成、オンライン申請、案件の管理</td></tr>
+      <tr><td class="must">測量CADシステム「トレンドワン」（Ver.9）</td><td>福井コンピュータ株式会社</td><td>測量の図面作成</td></tr>
+      <tr><td class="must">Microsoft Office Home &amp; Business 2024</td><td>Microsoft</td><td>権とトレンドワンが、WordとExcelを使って書類を作ります</td></tr>
+      <tr><td class="must">Claude Code</td><td>Anthropic</td><td>AIによる書類作成と照合の補助です。インターネットへの接続が必要です</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">2</span>必要な性能</h2>
+  <div class="table-wrap">
+  <table class="stack">
+    <thead><tr><th>項目</th><th>必要な条件</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td class="item">CPU</td><td class="must">インテル Core Ultra 7、またはCore i7</td><td class="why">トレンドワンはインテル製のCoreだけに対応しています。推奨はCore i7です</td></tr>
+      <tr><td class="item">OS</td><td class="must">Windows 11 Pro（64ビット）</td><td class="why">権はWindows 11だけに対応しています。Proにするのは、ドライブを暗号化して依頼人の情報を守るためです</td></tr>
+      <tr><td class="item">メモリ</td><td class="must">32GB</td><td class="why">権の推奨は16GB以上です。複数のソフトを同時に開くため、余裕を持たせます</td></tr>
+      <tr><td class="item">SSD</td><td class="must">1TB</td><td class="why">案件の写真と図面がたまっていくためです</td></tr>
+      <tr><td class="item">画面</td><td class="must">14型前後、1920×1200程度</td><td class="why">トレンドワンの推奨は1920×1080以上です</td></tr>
+      <tr><td class="item">グラフィック</td><td class="must">CPU内蔵のもので足ります</td><td class="why">トレンドワンの3D表示は、OpenGLに対応していれば動きます</td></tr>
+      <tr><td class="item">有線LAN</td><td class="must">1000BASE-Tの端子</td><td class="why">権のネットワーク版は有線LANが必須です。端子がない機種は変換アダプタをつけます</td></tr>
+      <tr><td class="item">Office</td><td class="must">Office Home &amp; Business 2024（買い切り版）</td><td class="why">権はWordとExcelの2021版か2024版のデスクトップ版だけに対応しています。2021版はサポートが終わるため、2024版にします</td></tr>
+      <tr><td class="item">周辺機器</td><td class="must">外付けハードディスク（100GB以上）</td><td class="why">権のデータのバックアップ用です。権の推奨です</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="ng">
+    <h3>次のものは選ばないでください</h3>
+    <ul>
+      <li>AMD製のCPU（Ryzenなど）を積んだ機種。トレンドワンが動きません</li>
+      <li>ARM版のWindowsの機種（Snapdragonを積んだ機種など）。権が動きません</li>
+      <li>Celeronを積んだ機種。トレンドワンが動きません</li>
+      <li>Officeが2021版の機種や、Web版のOfficeだけの機種</li>
+    </ul>
+    <p class="note">「Copilot+ PC」という表示だけでは判断できません。インテル製とARM製のどちらもあるため、CPUの名前で確かめてください。</p>
+  </div>
+</section>
+
+
+<section>
+  <h2><span class="num">3</span>参考にした機種</h2>
+  <p>必要な性能を満たしていれば、ほかの機種でもかまいません。価格は2026年10月時点の通販サイトの目安です。</p>
+  <div class="cards">
+
+    <article class="card first">
+      <span class="badge">第一候補</span>
+      <h3>Lenovo ThinkPad E14 Gen 7</h3>
+      <p class="price">約17.5万円</p>
+      <p class="price-note">Officeを足して約21.5万円</p>
+      <dl>
+        <dt>CPU</dt><dd>Core Ultra 7 258V</dd>
+        <dt>メモリ</dt><dd>32GB</dd>
+        <dt>SSD</dt><dd>1TB</dd>
+        <dt>画面</dt><dd>14型 1920×1200</dd>
+        <dt>重さ</dt><dd>約1.32kg</dd>
+        <dt>有線LAN</dt><dd>あり（1000Mbps）</dd>
+      </dl>
+      <p class="care">Officeは別に購入します。注文するときにWindows 11 Proを選びます。</p>
+      <div class="links">
+        <a href="https://psref.lenovo.com/Product/ThinkPad/ThinkPad_E14_Gen_7_Intel" target="_blank" rel="noopener">レノボの仕様書（PSREF）</a>
+        <a href="https://kakaku.com/item/K0001723336/" target="_blank" rel="noopener">価格.comの該当モデル</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Panasonic Let's note FC7</h3>
+      <p class="price">約33万円</p>
+      <p class="price-note">Office付き、1TBのモデル</p>
+      <dl>
+        <dt>CPU</dt><dd>Core Ultra 7 356H</dd>
+        <dt>メモリ</dt><dd>32GB</dd>
+        <dt>SSD</dt><dd>1TB</dd>
+        <dt>画面</dt><dd>14型 1920×1200</dd>
+        <dt>重さ</dt><dd>約1.04kg</dd>
+        <dt>有線LAN</dt><dd>あり（1000Mbps）</dd>
+      </dl>
+      <p class="care">丈夫で持ち歩き向きです。CPUは2026年発売の新しい世代です。</p>
+      <div class="links">
+        <a href="https://content.connect.panasonic.com/jp-ja/fai/file/71680" target="_blank" rel="noopener">パナソニックの仕様書（PDF）</a>
+        <a href="https://kakaku.com/item/K0001774646/" target="_blank" rel="noopener">価格.comの該当モデル</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Dynabook GR/ZA</h3>
+      <p class="price">約34万円</p>
+      <p class="price-note">Office付き</p>
+      <dl>
+        <dt>CPU</dt><dd>Core Ultra 7 155H</dd>
+        <dt>メモリ</dt><dd>32GB</dd>
+        <dt>SSD</dt><dd>1TB</dd>
+        <dt>画面</dt><dd>13.3型 1920×1200</dd>
+        <dt>重さ</dt><dd>約0.9kg</dd>
+        <dt>有線LAN</dt><dd>あり（1000Mbps）</dd>
+      </dl>
+      <p class="care">軽くて持ち歩き向きです。標準のOSはWindows 11 Homeです。</p>
+      <div class="links">
+        <a href="https://dynabook.com/business/product/business-notebook/index.html" target="_blank" rel="noopener">Dynabookのビジネスノート一覧</a>
+        <a href="https://kakaku.com/item/J0000050823/" target="_blank" rel="noopener">価格.comの該当モデル</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">4</span>初期設定でお願いしたいこと</h2>
+  <ul class="plain">
+    <li>ドライブの暗号化（BitLocker）を有効にし、回復キーを紙で渡してください</li>
+    <li>OfficeとWindowsの更新を済ませた状態で渡してください</li>
+    <li>可能であれば、権とトレンドワンの組み込みと動作確認までお願いします</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">5</span>根拠にした資料</h2>
+  <ul class="plain refs">
+    <li><a href="https://www.legal.co.jp/products/tikara/shisutemukousei/tikara_shisutemukousei02.html" target="_blank" rel="noopener">司法書士システム「権」推奨機器構成</a><br><span class="src">株式会社リーガル。Windows 11のみ、ARM版は非対応、メモリ16GB以上、Office 2021か2024</span></li>
+    <li><a href="https://www.legal.co.jp/products/tikara/" target="_blank" rel="noopener">司法書士システム「権」製品ページ</a><br><span class="src">株式会社リーガル。最新はV20.06</span></li>
+    <li><a href="https://const.fukuicompu.co.jp/products/trendone/" target="_blank" rel="noopener">測量CAD「トレンドワン」製品ページ</a><br><span class="src">福井コンピュータ株式会社</span></li>
+    <li><a href="https://const.fukuicompu.co.jp/sys_img/support/1747730175.pdf" target="_blank" rel="noopener">トレンドワン Ver.9 提供の案内（PDF）</a><br><span class="src">福井コンピュータ株式会社。2025年5月20日リリース</span></li>
+    <li><a href="https://www.fukuicompu.co.jp/mnl/extra/tone/win11/mnl/w81-11-one-hosoku.pdf" target="_blank" rel="noopener">トレンドワン Windows 11 の補足資料（PDF）</a><br><span class="src">福井コンピュータ株式会社。インテル製Coreのみ、推奨Core i7、メモリ8GB</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p>ご相談者　外﨑 顯博</p>
+  <p>連絡先　<a href="mailto:EdtechChikuho@gmail.com">EdtechChikuho@gmail.com</a></p>
+  <p>価格と仕様は2026年10月時点の公開情報です。最新の情報は各メーカーの資料でお確かめください。</p>
+</footer>
+
+</div>
+</body>
+</html>
